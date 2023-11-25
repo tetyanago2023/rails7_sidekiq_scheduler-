@@ -10,6 +10,11 @@ class PostsController < ApplicationController
   def show
   end
 
+  def published
+    @posts = Post.where(published: true)
+    render :index
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
